@@ -33,7 +33,7 @@ body {
 }
 
 #navbar__logo{
-    background-color: #ff8177;
+    background-color: #CB6B4D;
     background-image: linear-gradient(to top, #5A7969 0%, #173A2B 100%);
     background-size: 100%;
     -webkit-background-clip: text;
@@ -59,13 +59,22 @@ body {
 }
 
 .navbar__links:hover{
-    color: #f77062;
+    color: #CB6B4D;
     transition: all 0.3s ease;
 }
 
 .navbar__item{
     height: 80px;
 }
+
+#navbar__logo {
+    display: flex;
+    align-items: center; 
+}
+
+#navbar__logo i {
+    margin-right: 5px; 
+} 
 
 .navbar__links{
     color: #fff;
