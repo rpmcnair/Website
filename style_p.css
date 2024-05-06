@@ -1,0 +1,144 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+body {
+    background-color: #fff; 
+}
+
+.navbar{
+    background: #dcbfaa;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+} 
+
+.navbar__container {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+#navbar__logo{
+    background-color: #ff8177;
+    background-image: linear-gradient(to top, #5A7969 0%, #173A2B 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2 rem;
+}
+
+.fa-gem{
+    margin-right: 0.5rem;
+}
+
+.navbar__menu{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    text-align: center;
+}
+
+.navbar__item{
+    height: 80px;
+}
+
+.navbar__links{
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+    height: 100%;
+}
+
+.navbar__btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    width: 100%;
+}
+
+
+.project-title h1 {
+    font-size: 2rem;
+    color: #173A2B; 
+    text-align: center;
+    margin-top: 20px;
+}
+
+.project-content {
+    padding: 20px;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666; 
+}
+
+.project-content p {
+    margin-bottom: 15px; 
+}
+
+.project-content ol {
+    padding-left: 20px; 
+}
+
+.project-content li {
+    margin-bottom: 10px; 
+}
+
+.image-container {
+    display: flex;
+    justify-content: flex-start; 
+    flex-wrap: wrap; 
+}
+
+.image-container img {
+    width: 48%; 
+    height: auto; 
+    margin: 1%; 
+}
+
+
+.courses-container {
+    display: flex;
+    align-items: flex-start; 
+    justify-content: center; 
+    gap: 10px; 
+}
+
+.courses-list {
+    flex: 1; 
+    max-width: 60%; 
+}
+
+.courses-image {
+    flex: 1; 
+    max-width: 40%; 
+}
+
+.courses-image img {
+    width: 250px; 
+    height: auto; 
+}
+
+

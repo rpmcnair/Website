@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 1: Prediction Model </title>
+    <link rel="stylesheet" href="style_p.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="/" id="navbar__logo">Riley McNair</a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span the="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="/" class="navbar__links">Home</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/aboutme.html" class="navbar__links">About Me</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Title Section -->
+    <div class="project-title">
+        <h1>Prediction Modeling: Voter Turnout</h1>
+    </div>
+
+    <!-- Content Section -->
+    <div class="project-content">
+        <div class="project-content">
+            <p><strong>Introduction</strong></p>
+            <p>With a background in political science and a current focus on computer science, I am very interested in the 
+                intersection of these fields. This project aims to integrate statistical modeling techniques within a 
+                political framework.</p>
+
+            <p>The primary objective of this project was to develop a predictive model capable of estimating voter turnout 
+                for the 2020 US presidental election. Recognizing the complexity of voter behavior, this model considers various factors 
+                that could potentially influence turnout rates across different states. Based on comprehensive research, 
+                the study identified six key variables that might affect these rates. The variables were selected after 
+                thorough analysis of several datasets and scholarly sources, all of which are cited below.</p>
+
+            <p>I set out to answer the following questions: 
+                <ol>- Is there a significant relationship between the varaible Voter Turnout 2020 and the other socio-economic and political factors?</ol>
+                <ol>- How do various political factors help predict voter turnout rates in 2020?</p></ol>
+                
+            
+            <p><strong>Data Set</strong></p>
+            <p>Here is a detailed look at each variable considered in the model:</p>
+            
+            <ol>
+                <li><strong>Diversity Index:</strong> This index measures the probability that two randomly selected 
+                    individuals from a state belong to different racial or ethnic groups, using data from the U.S. Census 
+                    Bureau (2020).</li>
+                <li><strong>Eduction Index:</strong> I constructed this index by integrating several educational metrics:
+                    high school dropout rates, the percentage of individuals with higher education diplomas,
+                    and adult literacy rates (for those aged 15 and older). The index is calculated as follows:</li>
+                    <div class="project-content">
+                        <img src="images/education_index.png" alt="Education_Index" style="width: 450px; height: auto;">
+                    </div>
+                <li><strong>Economic Index:</strong> This index was developed to gauge the economic 
+                    well-being of each state by combining unemployment rates, poverty levels, and median 
+                    household income.</li>
+                    <div class="project-content">
+                        <img src="images/economic_index.png" alt="Economic_Index" style="width: 500px; height: auto;">
+                    </div>
+                <li><strong>Voter Turnout Rate 2016:</strong> Voter turnout data calculates the precentage of eligable
+                    voters from each state who voted in the 2016 election. It was obtained from the  United States 
+                    Elections Project (2016).</li>
+                <li><strong>Polarization Variance:</strong> Measures the level of political polarization among residence 
+                    in each state. Calculated by using enthropy measure on categorical variables, where respondents of each state
+                    indicated there level of political preference. </li>
+                <li><strong>Protest per 100k:</strong> The number of protests in each state per 100,000 citizens. </li>
+                <li><strong>Voter Turnout Rate 2020 (Response):</strong> Voter turnout data calculates the precentage of eligable
+                    voters from each state who voted in the 2020 election. It was obtained from the  United States 
+                    Elections Project (2020).</li>
+            </ol>
+
+            <p>With these variables I created a heat map to see the correlation between these predictor variables and 
+                the response variables (Voter Turnout 2020). 
+            </p>
+
+            <div class="image-container">
+                <p>Figure 1:</p>
+                <img src="images/dataset.png" alt="Data set" style="width: 650px; height: 200px;">
+                <p>Figure 2:</p>
+                <img src="images/heatmap.png" alt="Variable Heat Map" style="width: 400px; height: auto;">
+            
+            </div>
+            <p>Figure 2 visualizes the association between the response variable and its six numerical explanatory 
+                variables. The response variable voter_turnout_2020 has a relatively strong association with
+                voter_turnout_2016, economic_index, and education_index. </p>
+
+            <p><strong>Methods and Results</strong></p>
+            <p><i>Overview</i></p> 
+            <p> To predict 2020 voter turnout rates, I utilize the forward selection algorithm and ridge regression 
+                method on the training set, selecting the most optimal model. Subsequently, I assess the model's 
+                performance on the testing data based on the chosen model.</p>
+            
+            <p>Why is forward selection algorithm chosen?
+                The Forward Selection technique can simplify models and prevent overfitting by aiding in model 
+                simplification. It starts with no predictors and adds them one by one, choosing at each step the 
+                variable that has the most significant statistical contribution to the model.</p>
+
+            <p>Why is Ridge method chosen?
+                From the EDA section, I suspect the presence of multicollinearity. While traditional linear regression 
+                can yield unstable and imprecise coefficient estimates, the introduction of a penalty term can shrink the 
+                coefficients, stabilizing the model and mitigating the issue of multicollinearity.</p>
+            
+            <p><i>Testing and Training</i></p>
+            <p>Initially, I acquired a training and a testing set by reserving 40% of the original dataset for testing 
+                purposes, this data set is relatively small so the split is conservative. I further refrain from inspecting 
+                the testing set until after the model selection process is completed. </p>
+
+            <p><i>Foward Selection</i></p>
+            <p>To estimate the predictive performance of the selected model, I utilized cross-validation with both 
+                forward selection and ridge regression. Beginning forward selection:</p>
+                <div class="project-content">
+                    <p>Figure 3:</p>
+                    <img src="images/cross-validation.png" alt="MSE of CV for FS" style="width: 700px; height: auto;">
+                </div>
+            <p>I calculate the average across the columns of this matrix to produce a vector. In this vector, the i-th 
+                element represents the cross-validation error for the i-th variable model.</p>
+                <div class="project-content">
+                    <p>Figure 4:</p>
+                    <img src="images/foward_selection_cv_error_mean.png" alt="CV variables" style="width: 700px; height: auto;">
+                </div>
+            <p>The 3-variable model has the lowest mean of the cross-validation error. Corresponding with the 
+                RMSE in figure 5.</p>
+                <div class="project-content">
+                    <p>Figure 5:</p>
+                    <img src="images/RMSE_fs.png" alt="RMSE FS" style="width: 700px; height: auto;">
+                </div>
+            <p><i>Ridge Regression</i></p>
+            <p>I trained the ridge regression model using the same training set that was used for forward selection. 
+                Notably, the model demonstrates optimal performance when the lambda value is set at 0.06738, corresponding 
+                to the lowest mean squared error (MSE). For a comprehensive comparison, I have included the root mean 
+                squared error (RMSE) from the cross-validation of the ridge model in the summary table alongside the 
+                results from the forward selection method.</p>
+                <div class="project-content">
+                    <img src="images/ridge_mse.png" alt="RMSE FS" style="width: 700px; height: auto;">
+                </div>
+            <p>Employing RMSE as the metric for model performance assessment, the ridge regression method exhibits 
+                marginally better predictive accuracy compared to other models tested. Given its effectiveness, I will 
+                use ridge regression to estimate the influences of different predictors and understand their contribution 
+                to the model, although it will not explicitly select variables.</p>
+            <p><i>Creating the Model</i></p>
+            <p>To construct the most robust model for predicting voter turnout in 2020, I combined insights from both 
+                forward selection and ridge regression techniques. Initially, forward selection identified the most 
+                statistically significant predictors. Subsequently, ridge regression was employed to refine these 
+                selections by adjusting for multicollinearity, which is crucial given the interdependencies often present 
+                in economic and demographic data. The final model was an Ordinary Least Squares (OLS) regression, which 
+                incorporated the variables deemed most important through our rigorous selection process. This model not 
+                only benefits from the simplicity and interpretability of OLS but also from the enhanced predictor 
+                selection process that effectively balances the inclusion of important variables while managing 
+                multicollinearity. This approach ensures that our model is both stable and has strong predictive power, 
+                as evidenced by the high R-squared value and low residual standard error observed in the testing set.</p>
+                <div class="project-content">
+                    <p>Figure 6:</p>
+                    <img src="images/RMSE_fs_and_RR.png" alt="RMSE FS" style="width: 700px; height: auto;">
+                </div>
+            <div class="project-content">
+                <p>Figure 7:</p>
+                <img src="images/model_stats.png" alt="RMSE FS" style="width: 500px; height: auto;">
+            </div>
+            <p>The voter turnout model for 2020 displays a high R-squared value of 0.9154, indicating good predictive 
+                power with over 91.54% of the variance in voter turnout being explained by the model. This strong fit 
+                underscores the significant impact of the variables included, especially the voter turnout from 2016. 
+                The residual standard error was low at 0.01991 across 27 degrees of freedom, suggesting that the predicted 
+                values were very close to the actual values.
+            </p>
+            <div class="project-content">
+                <p>Figure 8:</p>
+                <img src="images/prediction_graph.png" alt="RMSE FS" style="width: 500px; height: auto;">
+            </div>
+        
+        <p><strong>Discussion</strong></p>
+        <p>The primary objective of this study is to identify the key factors that significantly influence voter turnout 
+            in the 2020 U.S. presidential election. A total of six factors were investigated, and through the computation 
+            of RMSE values, three were found to be significant contributors to enhancing the model's fit.</p>
+        <p>The analysis addresses the initial questions posed: first, whether a substantial relationship exists between 
+            historical voter turnout data and the 2020 election turnout, and second, whether various socio-economic and 
+            political factors prove significant in predicting voter turnout. Examining the red_OLS model summary reveals 
+            the significance of the voter_turnout_2016 variable in predicting the voter_turnout_2020, indicated by the 
+            three asterisks (***), which signifies its pronounced influence compared to other variables.</p>
+        <p>Yielding a relatively high adjusted R-Squared value of 0.9154, our final model demonstrates that independent 
+            variables maintain statistical significance. With p-values below the significance level of 0.05, 
+            meaningful conclusions can confidently be drawn from the study. </p>
+        <p>The study's findings offer practical implications for political campaigns and policymakers seeking to enhance 
+            voter engagement and turnout. Recommendations include focusing on the education and economic well-being of 
+            the electorate, as well as understanding the significant impact of historical voting patterns. Prospective 
+            campaigners and political analysts can leverage this research to tailor their strategies based on the 
+            identified influential factors and thereby more effectively target interventions aimed at increasing voter 
+            participation.</p>
+
+        </div>
+
+        <p>The code for the model can be found on my github along with the seed and data set for replicability: 
+            <a href="https://github.com/rpmcnair/Voter-Turnout-Model" target="_blank">Voter-Turnout-Model.git</a></p>
+        <p>Code for creating and cleaning the data set can be found here: 
+                <a href="https://github.com/rpmcnair/Poli_381_Project" target="_blank">Poli_Project.git</a></p>
+        <p><strong>References:</strong></p>
+    <p>     - Bureau of Labor Statistics, U.S. Department of Labor. (2024). Local Area Unemployment Statistics.https://www.bls.gov/web/laus/laumstrk.htm </p>
+     <p>    - CNN. (2020). Election 2020: Presidential election results. https://www.cnn.com/election/2020/results/president</p>       
+        <p>- Federal Reserve Bank of St. Louis. (2022). Educational Attainment, Annual: Bachelor's Degree or Higher by State. https://fred.stlouisfed.org/release/tables?eid=391444&rid=330</p>
+        <p>- Federal Reserve Bank of St. Louis. (2022). Real Median Household Income by State, Annual. https://fred.stlouisfed.org/release/tables?eid=259515&rid=249</p>    
+        <p>-  McDonald, M. (2022). 2022 General Election Turnout. United States Elections Project. https://election.lab.ufl.edu/voter-turnout/2022-general-election-turnout/</p>  
+        <p>- United States Department of Agriculture, Economic Research Service. (2023). Percent of total population in Poverty. https://data.ers.usda.gov/reports.aspx?ID=17826 </p>  
+        <p>- U.S. Census Bureau. (2020). Racial and Ethnic Diversity in the United States: 2010 and 2020 Census. https://www.census.gov/library/visualizations/interactive/racial-and-ethnic-diversity-in-the -united-states-2010-and-2020-census.html</p>    
+         <p>- World Population Review. (2024). High School Graduation Rates by State 2024. https://worldpopulationreview.com/state-rankings/us-literacy-rates-by-state</p>   
+         <p>- World Population Review. (2024). U.S. Literacy Rates by State. https://worldpopulationreview.com/state-rankings/high-school-graduation-rates-by-state</p>   
+        
+        
+        <p>This past semester I was in a political science course about managing quantative data in political science. This personal project was inspired by work I had done in that class.
+            The relationship explored for my project between polarization and protests, it employs more basic measures of linear regression and data analysis. A more detailed look into the
+            variables I choose and the way they were cleaned and created are listed in these reports. 
+            I have linked the reports below.
+            <div class="project-content">
+                <a href="documents/project_part_b.pdf" download="YourFile.pdf">Download Poli Project Part 1</a>
+            </div>
+            <div class="project-content">
+                <a href="documents/project_part_c.pdf" download="YourFile.pdf">Download Poli Project Part 2</a>
+            </div>
+        </p>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

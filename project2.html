@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 2: Voting Kiosk (Java)</title>
+    <link rel="stylesheet" href="style_p.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="/" id="navbar__logo">Riley McNair</a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="/" class="navbar__links">Home</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/aboutme.html" class="navbar__links">About Me</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Title Section for Project 2 -->
+    <div class="project-title">
+        <h1>Political Candidate Information Kiosk</h1>
+    </div>
+
+    <!-- Content Section for Project 2 -->
+    <div class="project-content">
+        <p>This project was developed as part of a computer science course to enhance our understanding of various system-building aspects. 
+            The primary goals included creating data storage through the use of JSON for saving and loading data, 
+            learning about user interface design using graphical user interfaces (GUIs), and event logs. The assignment involved designing a user-friendly 
+            interface that supported functionalities such as adding items to a list and creating new entries.
+        </p>
+        
+        <p><strong>Project Description</strong></p>
+        <p>Within this application, users will be able to look up political candidates of their local riding in Vancouver 
+        for the 2023 municipal election. The application will store candidates' information, platform, party affiliation, 
+        and other information regarding the policy reforms they are running on. Users will be voters across Vancouver 
+        interested in seeing and learning about the candidates they want to vote for. Users can look for specific candidates 
+        and their policies or look up information regarding party information and all the candidates running under certain 
+        parties. Furthermore, since it is a local election, candidates of the community (or their party) can add 
+        themselves/candidates to the kiosk and input their political information.</p>
+        <div class="project-content">
+            <img src="images/image_1.png" alt="Home Page" style="width: 500px; height: auto;">
+        </div>
+
+        <p><strong>User Stories:</strong></p>
+        <p>- As a user, I want to be able to add a candidate to the kiosk.</p>
+        <div class="image-container">
+            <img src="images/image_2.png" alt="Add User" style="width: 400px; height: auto;">
+            <p>Figure 2:</p>
+            <img src="images/image_3.png" alt="Add User" style="width: 400px; height: auto;">
+        
+        </div>
+        <p>- As a user, I want to view candidates and there information.</p>
+        <div class="project-content">
+            <img src="images/image_4.png" alt="Home Page" style="width: 500px; height: auto;">
+        </div>
+        <p>- As a user, I want to be able to be able to remove a candidate.</p>
+        <div class="image-container">
+            <img src="images/image_5.png" alt="Remove User" style="width: 400px; height: auto;">
+            <p>Figure 2:</p>
+            <img src="images/image_6.png" alt="Remove User" style="width: 400px; height: auto;">
+        
+        </div>
+        <p>- As a user, when I restart the program I want to be able to load the election information from the previous file. </p>
+        <p>- As a user, I want to be able to save my information, regarding candidates inputted when I quit.</p>
+        
+
+        <p><strong>Instructions for Grader:</strong></p>
+        <p>- You can generate the first required action related to the user story "adding multiple candidates to the candidate repository" by clicking election workers and input information and click add candidates. You can view "reading multiple candidates to the candidate repository" by clicking voter button and click view candidates.</p>
+        <p>- You can generate the second required action related to the user story "removing candidates to the candidate repository" by clicking election workers button and click remove candidates, then type in the candidates name. View the changes in the voter menu.</p>
+        <p>- You can locate my visual component by opening the main page. </p>
+        <p>- You can save the state of my application by clicking on add candidates, adding a candidate then clicking the save candidate button.</p>
+        <p>- You can reload the state of my application by clicking on voter tab, clicking load candidates and then viewing them with the view tab.  </p>
+
+        <p><strong>Event Log When Program is Ran:</strong></p>
+        <p>Mon Nov 27 23:09:30 PST 2023 </p>
+
+        <p>   Candidate Added.  </p>
+            
+        <p>  Mon Nov 27 23:09:38 PST 2023   </p>
+            
+        <p>    Candidate Added.  </p>
+            
+        <p>    Mon Nov 27 23:09:38 PST 2023  </p>
+            
+        <p>    Candidate Added.  </p>
+            
+        <p>    Mon Nov 27 23:09:38 PST 2023  </p>
+            
+        <p>    Candidate Added.  </p>
+            
+        <p>    Mon Nov 27 23:09:38 PST 2023  </p>
+            
+        <p>    Candidate Added.  </p>
+            
+        <p>    Mon Nov 27 23:09:49 PST 2023  </p>
+            
+        <p>    Candidate Removed.  </p>
+
+        <p>Code for this project can be found on my github reporstory: 
+            <a href="https://github.com/rpmcnair/Voter-Kiosk" target="_blank">Voter-Kiosk.git</a></p>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
