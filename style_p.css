@@ -58,6 +58,11 @@ body {
     text-align: center;
 }
 
+.navbar__links:hover{
+    color: #f77062;
+    transition: all 0.3s ease;
+}
+
 .navbar__item{
     height: 80px;
 }
