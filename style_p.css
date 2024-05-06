@@ -112,16 +112,22 @@ body {
     margin-bottom: 10px; 
 }
 
+.project-content img {
+    width: 100%; 
+    height: auto;
+}
+
 .image-container {
     display: flex;
-    justify-content: flex-start; 
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
+    justify-content: space-between; /* Ensures spacing between images */
 }
 
 .image-container img {
-    width: 48%; 
-    height: auto; 
-    margin: 1%; 
+    flex: 1 1 auto; /* Allows the image to grow and shrink but according to content size */
+    max-width: 50%; /* Each image can take up to half of the container's width */
+    height: auto; /* Keeps the aspect ratio of the image */
+    margin: 5px; /* Adds a little space around images */
 }
 
 
@@ -145,6 +151,42 @@ body {
 .courses-image img {
     width: 250px; 
     height: auto; 
+}
+
+.footer__container{
+    background-color: #f9f4f3;
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; 
+}
+
+.footer__link--items{
+    margin-right: 150px;
+    font-size: 1rem;
+    color: #173A2B;
+}
+
+@media screen and (max-width: 768px) {
+    /* Adjust image size for screens up to 768px wide */
+    .project-content img {
+        max-width: 300px; 
+        width: auto; 
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* Adjust image size for screens up to 480px wide */
+    .project-content img {
+        max-width: 200px; 
+        width: auto; 
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .image-container img {
+        max-width: 100%; /* Each image takes full width on smaller screens */
+    }
 }
 
 
