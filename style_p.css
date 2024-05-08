@@ -139,6 +139,10 @@ body {
     margin: 5px; 
 }
 
+.nested {
+    margin-left: 40px; 
+  }
+
 .courses-container {
     display: flex;
     align-items: flex-start; 
