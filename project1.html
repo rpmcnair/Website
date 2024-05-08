@@ -67,7 +67,7 @@
                 <li><i>Diversity Index:</i> This index measures the probability that two randomly selected 
                     individuals from a state belong to different racial or ethnic groups, using data from the U.S. Census 
                     Bureau (2020).</li>
-                <li><i>Eduction Index:</i> I constructed this index by integrating several educational metrics:
+                <li><i>Education Index:</i> I constructed this index by integrating several educational metrics:
                     high school dropout rates, the percentage of individuals with higher education diplomas,
                     and adult literacy rates (for those aged 15 and older). The index is calculated as follows:</li>
                     <div class="project-content">
@@ -79,14 +79,14 @@
                     <div class="project-content">
                         <img src="images/economic_index.png" alt="Economic_Index" style="width: 500px; height: auto;">
                     </div>
-                <li><i>Voter Turnout Rate 2016:</i> Voter turnout data calculates the precentage of eligable
-                    voters from each state who voted in the 2016 election. It was obtained from the  United States 
+                <li><i>Voter Turnout Rate 2016:</i> Voter turnout data calculates the percentage of eligible
+                    voters from each state who voted in the 2016 election. It was obtained from the  United States. 
                     Elections Project (2016).</li>
-                <li><i>Polarization Variance:</i> Measures the level of political polarization among residence 
-                    in each state. Calculated by using enthropy measure on categorical variables, where respondents of each state
-                    indicated there level of political preference. </li>
+                <li><i>Polarization Variance:</i> Measures the level of political polarization among residents 
+                    in each state. Calculated by using entropy measure on categorical variables, where respondents of each state
+                    indicated their level of political preference. </li>
                 <li><i>Protest per 100k:</i> The number of protests in each state per 100,000 citizens. </li>
-                <li><i>Voter Turnout Rate 2020 (Response):</i> Voter turnout data calculates the precentage of eligable
+                <li><i>Voter Turnout Rate 2020 (Response):</i> Voter turnout data calculates the percentage of eligible
                     voters from each state who voted in the 2020 election. It was obtained from the  United States 
                     Elections Project (2020).</li>
             </ol>
@@ -96,7 +96,7 @@
                 <img src="images/dataset.png" alt="Data set" style="width: 700px; height: auto;">
             </div>
 
-            <p>With these variables we created a heat map to see the correlation between these predictor variables 
+            <p>With these variables I created a heat map to see the correlation between these predictor variables 
                 and the response variables (Voter Turnout 2020).
             </p>
 
@@ -129,7 +129,7 @@
                   <ul>
                     <li>Why is Ridge method chosen?
                       <ul class="nested">
-                        <li>From the exploratory data section, we suspect the presence of multicollinearity. While 
+                        <li>From the exploratory data section, I suspect the presence of multicollinearity. While 
                             traditional linear regression can yield unstable and imprecise coefficient estimates, 
                             the introduction of a penalty term can shrink the coefficients, stabilizing the model and 
                             mitigating the issue of multicollinearity.</li>
@@ -139,11 +139,11 @@
             
             <p><i>Testing and Training</i></p>
             <p>Initially, I acquired a training and a testing set by reserving 40% of the original dataset for testing 
-                purposes, this data set is relatively small so the split is conservative. Refraining from inspecting the 
+                purposes, this data set is relatively small so the split is conservative. I refrain from inspecting the 
                 testing set until after the model selection process is completed. </p>
             
             <p><i>Cross Validation</i></p>
-            <p>To estimate the predictive performance of the selected model, we utilized cross-validation in order to 
+            <p>To estimate the predictive performance of the selected model, I utilized cross-validation in order to 
                 assess how well the model generalizes to a data set and to minimize the potential for overfitting, 
                 thereby ensuring that the model's performance is robust across various subsets of the data within both 
                 forward selection and ridge regression techniques. </p>
@@ -164,7 +164,7 @@
                     <img src="images/foward_selection_cv_error_mean.png" alt="CV variables" style="width: 700px; height: auto;">
                 </div>
 
-            <p>We see from the figure below that the 3-variable model has the lowest mean of the cross-validation error. 
+            <p>I see from the figure below that the 3-variable model has the lowest mean of the cross-validation error. 
                 The RMSE is then calculated for the OLS model using the 3-variable forward selection process. </p>
                 <div class="project-content">
                     <p>Figure 5:</p>
@@ -175,14 +175,14 @@
             <p><i>Ridge Regression</i></p>
             <p>Moving onto ridge regression, I trained the model using the same training set that was used for forward 
                 selection. Notably, the model demonstrates optimal performance when the lambda value is set at 0.06738, 
-                corresponding to the lowest mean squared error (MSE). For a comprehensive comparison, we have included 
+                corresponding to the lowest mean squared error (MSE). For a comprehensive comparison, I have included 
                 the root mean squared error (RMSE) from the cross-validation of the ridge model in the summary table 
                 alongside the results from the forward selection method.</p>
                 <div class="project-content">
                     <img src="images/ridge_mse.png" alt="RMSE FS" style="width: 700px; height: auto;">
                 </div>
             <p>Employing RMSE as the metric for model performance assessment, the ridge regression method exhibits s
-                lightly better predictive accuracy compared to other models tested. Given its effectiveness, we will use 
+                lightly better predictive accuracy compared to other models tested. Given its effectiveness, I will use 
                 ridge regression to enhance our predictive framework, ensuring robustness against overfitting and 
                 improving generalization on future unseen data. </p>
                 <div class="project-content">
