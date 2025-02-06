@@ -137,6 +137,37 @@ body {
     max-width: 50%; 
     height: auto; 
     margin: 5px; 
+    margin-bottom: 100px; 
+}
+
+.image-container_xs {
+    text-align: left;  /* Aligns the image to the left */
+    margin-left: 50px;  /* Moves the container to the left */
+}
+
+.image-container_xs img {
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 20px; /* Adds space below the image */
+    margin-left: 100px;
+}
+
+.image-container_xs:first-child img {
+    width: auto;
+    height: 150px; /* Set specific height */
+}
+
+.image-container_xs:last-child img {
+    width: auto;
+    height: 350px; /* Different height */
+}
+
+
+.image-row {
+    display: flex;  /* Puts images in a row */
+    justify-content: flex-start;  /* Aligns them to the left */
+    gap: 10px;  /* Adjusts spacing between images */
+    margin-bottom: 5px; /* Reduces bottom margin */
 }
 
 .nested {

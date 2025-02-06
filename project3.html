@@ -37,15 +37,97 @@
 
   <!-- Content Section -->
   <div class="project-content">
-    <p>Welcome to my new project on designing a relational database for a ski resort.
-        
-        304 Project: Ski Resort Data Base
-        This database can be used by ski resort management to keep track of the status of all parts of the mountain. Ski instructors can use the lift and class information to see what parts of the mountain are open as well as what runs have many classes running on them to plan out where they will take their class on the mountain. Upper management can use the information regarding patrons, passes, and dining locations to drive future pricing and improvements to the resort. Maintenance crews can use lift and run status to see where maintenance is needed on the mountain and help reduce downtime.
-        Acknowledgements:
-        Initial source code from Tutorial 2 Node.js/JS sample project.
-        
-        (Here you can describe your project goals, schema design, and other details.)</p>
-    <!-- Add further content as needed -->
+    <!-- Intro -->
+    <p><h3>Project Overview</h3></p>
+    <p>This project was developed as part of the CPSC Relational Database course at UBC to design a relational database system that efficiently manages various aspects of a ski resort. </p>
+    <p><h3>Project Description</h3></p>
+    <p>Ski resort management involves handling guest information, equipment rentals, lift ticket sales, ski lessons, dining services, and 
+        ski infrastructure. The goal of this database is to optimize resort operations and provide structured, accessible data for different 
+        stakeholders, including ski instructors, management, and maintenance teams. </p>
+    <p>The project began with an ER diagram, where key entities were identified, relationships between tables were established, and 
+        functional dependencies were defined to normalize the database. After the initial database design, a Relational Schema was developed 
+        to define cardinality relationships, ISA hierarchies, and weak entities.</p>    
+    <p>The relational schema was implemented using DDL (Data Definition Language) CREATE TABLE statements, and INSERT statements were used 
+        to populate the database. Those statements can be found in a PDF at the bottom of this page. Once the database structure was 
+        finalized, SQL queries were written to retrieve specific details. Finally, a frontend user interface was developed to allow resort 
+        staff to interact with the system and manage operations defined by the queries. </p>
+
+    <!-- ER Diagram -->   
+    <p> The following image is the ER diagram that the project follows: </p>
+    <div class="image-container">
+        <img src="images/ER_diagram.png" alt="ER Diagram" style="width: 400px; height: auto;">
+    </div>
+    <p><h3>Key Functionalities</h3></p>
+    <p>- Patron & Ski Instructor Management: Tracks guest details, ski lesson enrollments, and instructor availability. </p>
+    <p>- Lift & Run Status Tracking: Enables efficient scheduling of maintenance and lift/runs tracking.</p>
+    <p>- Class Scheduling & Reservations: Helps instructors plan and monitor ski classes.</p>    
+    <p>- Lift Ticket & Restaurant Integration: Offers a way to manage season passes, day tickets, and restaurant discounts.</p>    
+    <p>- Data Analytics: Supports queries like aggregations, joins, and projections to extract insights for resort decision-making.</p> 
+    
+    <!-- Queries -->
+    <h3>Queries</h3>
+    <p>The following images demonstrate various queries implemented in the database and their functionality.</p>
+
+    <p><strong>Insert:</strong> Insert a new rental into the database.</p>
+    <div class="image-row">
+        <div class="image-container_xs">
+            <img src="images/Insert_D.png" alt="Add Rental">
+        </div>
+        <div class="image-container_xs">
+            <img src="images/insert_a.png" alt="Add Rental">
+        </div>
+    </div>
+
+    <p><strong>Deletion:</strong> Delete a rental from the database.</p>
+    <div class="image-container_xs">
+        <img src="images/delete_d.png" alt="Delete Rental" style="width: 400px; height: auto;">
+    </div>
+
+    <p><strong>Update:</strong> Update a patron’s name or email address.</p>
+    <div class="image-container_xs">
+        <img src="images/update_d.png" alt="Update Patron" style="width: 400px; height: auto;">
+    </div>
+
+    <p><strong>Search:</strong> Search for a patron.</p>
+    <div class="image-container_xs">
+        <img src="images/search_d.png" alt="Search Patron" style="width: 400px; height: auto;">
+    </div>
+
+    <p><strong>Join:</strong> Join all lifts and runs, then retrieve runs for specific lifts.</p>
+    <div class="image-container_xs">
+        <img src="images/join_d.png" alt="Join Query" style="width: 400px; height: auto;">
+    </div>
+
+    <p><strong>Aggregation by GROUP BY:</strong> Calculate the total number of classes taught by each ski instructor.</p>
+    <div class="image-container_xs">
+        <img src="images/agg_gb_d.png" alt="Aggregation Query" style="width: 400px; height: auto;">
+    </div>
+
+    <p><strong>Aggregation by HAVING:</strong> Find all days with enrollment below half of the overall average.</p>
+    <div class="image-container_xs">
+        <img src="images/agg_having_d.png" alt="Aggregation with HAVING" style="width: 400px; height: auto;">
+    </div>
+
+    <p><strong>Nested Aggregation with GROUP BY:</strong> Find the average class size for each skill level.</p>
+    <div class="image-container_xs">
+        <img src="images/nested.png" alt="Nested Aggregation" style="width: 400px; height: auto;">
+    </div>
+
+    <p><strong>Division:</strong> Find all lifts that provide access to every run of a specific difficulty level (e.g., Lift 1 accesses all green runs).</p>
+    <div class="image-container_xs">
+        <img src="images/division_d.png" alt="Division Query" style="width: 400px; height: auto;">
+    </div>
+
+    <h3>Conclusion</h3>
+    <p>This project successfully implemented a relational database system to manage ski resort operations efficiently. 
+    By leveraging SQL queries, the system enables structured data retrieval and management for various aspects such as rentals, patrons, ski instructors, and lift operations.
+    The combination of entity-relationship modeling, database normalization, and front-end integration allows different stakeholders to access and modify data as needed.
+    This project highlights the practical applications of database management in real-world scenarios and serves as a strong foundation for further improvements and scalability.</p>
+
+    <div class="project-content">
+        <a href="https://rpmcnair.github.io/Website/pdf/rs.pdf" target="_blank">View Functional Dependencies, Relational Schema, and DDL Statements</a>
+    </div>
+
   </div>
 
   <script src="app.js"></script>
