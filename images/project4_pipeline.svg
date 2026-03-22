@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="150" viewBox="0 0 1100 150" fill="none">
+  <rect width="1100" height="150" fill="#F8F4EF"/>
+
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#1D312B"/>
+    </marker>
+    <style>
+      .box { fill: #FFFDFA; stroke: #2B2B2B; stroke-width: 2; rx: 14; }
+      .label { fill: #111111; font-family: Arial, Helvetica, sans-serif; font-size: 20px; text-anchor: middle; dominant-baseline: middle; }
+      .arrow { stroke: #1D312B; stroke-width: 2.5; marker-end: url(#arrowhead); }
+    </style>
+  </defs>
+
+  <rect class="box" x="12" y="30" width="140" height="80"/>
+  <text class="label" x="82" y="70">EventBridge</text>
+
+  <line class="arrow" x1="152" y1="70" x2="196" y2="70"/>
+
+  <rect class="box" x="196" y="30" width="140" height="80"/>
+  <text class="label" x="266" y="58">Lambda</text>
+  <text class="label" x="266" y="84">(ingest)</text>
+
+  <line class="arrow" x1="336" y1="70" x2="380" y2="70"/>
+
+  <rect class="box" x="380" y="30" width="140" height="80"/>
+  <text class="label" x="450" y="70">S3 raw</text>
+
+  <line class="arrow" x1="520" y1="70" x2="564" y2="70"/>
+
+  <rect class="box" x="564" y="30" width="140" height="80"/>
+  <text class="label" x="634" y="70">Athena</text>
+
+  <line class="arrow" x1="704" y1="70" x2="748" y2="70"/>
+
+  <rect class="box" x="748" y="30" width="140" height="80"/>
+  <text class="label" x="818" y="58">Lambda</text>
+  <text class="label" x="818" y="84">(curate)</text>
+
+  <line class="arrow" x1="888" y1="70" x2="932" y2="70"/>
+
+  <rect class="box" x="932" y="30" width="140" height="80"/>
+  <text class="label" x="1002" y="70">S3 curated</text>
+</svg>

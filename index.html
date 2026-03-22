@@ -3,78 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Website</title>
+    <title>Riley McNair | Portfolio</title>
     <link rel="stylesheet" href="style_2.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <head>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
-      </head>
-      
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous">
 </head>
 <body>
-    <div class="wrapper">
-        <!-- Navigation -->
-        <nav class="navbar">
-          <div class="navbar__container">
-            <a href="https://rpmcnair.github.io/Website/" id="navbar__logo">
-                <i class="fas fa-cubes fa-lg"></i> 
-                Riley McNair</a>
-            <div class="navbar__toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+    <div class="page-shell">
+        <header class="hero-panel">
+            <nav class="navbar">
+                <div class="navbar__container">
+                    <a href="https://rpmcnair.github.io/Website/" id="navbar__logo">
+                        <i class="fas fa-cubes fa-lg"></i>
+                        Riley McNair
+                    </a>
+                    <div class="navbar__toggle" id="mobile-menu" aria-label="Toggle navigation" aria-expanded="false">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                    <ul class="navbar__menu">
+                        <li class="navbar__item">
+                            <a href="https://rpmcnair.github.io/Website/" class="navbar__links">Home</a>
+                        </li>
+                        <li class="navbar__item">
+                            <a href="https://rpmcnair.github.io/Website/aboutme.html" class="navbar__links">About Me</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <main class="main">
+                <section class="hero">
+                    <p class="hero__eyebrow">Portfolio</p>
+                    <div class="hero__content">
+                        <div class="hero__copy">
+                            <h1>Data engineering and analytics projects.</h1>
+                            <p class="hero__intro">
+                                A selection of my projects in data engineering, modeling, and backend development. Built with AWS, Python, and real-world data.
+                            </p>
+                            <div class="hero__actions">
+                                <a class="hero__cta hero__cta--primary" href="#projects">View Projects</a>
+                                <a class="hero__cta hero__cta--secondary" href="aboutme.html">About Me</a>
+                                <a class="hero__cta hero__cta--secondary hero__cta--github" href="https://github.com/rpmcnair" target="_blank" rel="noopener noreferrer">GitHub</a>
+                            </div>
+                        </div>
+                        <aside class="hero__summary">
+                            <div class="summary-card summary-card--highlight">
+                                <p class="summary-card__label">Focus Areas</p>
+                                <ul class="summary-card__list">
+                                    <li>Predictive modeling</li>
+                                    <li>Database design</li>
+                                    <li>Data Engineering</li>
+                                </ul>
+                            </div>
+                        </aside>
+                    </div>
+                </section>
+
+                <section class="projects" id="projects">
+                    <div class="section-heading">
+                        <p class="section-heading__eyebrow">Projects</p>
+                    </div>
+
+                    <div class="project-grid">
+                        <article class="project-card">
+                            <p class="project-card__tag">Data Engineering</p>
+                            <h3>Texas Procurement Watch</h3>
+                            <p>
+                                A serverless AWS data pipeline that ingests procurement records, stores versioned raw data,
+                                and produces curated datasets for analysis.
+                            </p>
+                            <a class="project-card__link" href="project4.html">Open project</a>
+                        </article>
+
+                        <article class="project-card">
+                            <p class="project-card__tag">Machine Learning</p>
+                            <h3>Prediction Modeling: Voter Turnout</h3>
+                            <p>
+                                A modeling project focused on turnout prediction, feature selection, and evaluation across
+                                multiple statistical approaches.
+                            </p>
+                            <a class="project-card__link" href="project1.html">Open project</a>
+                        </article>
+
+                        <article class="project-card">
+                            <p class="project-card__tag">Databases</p>
+                            <h3>Relational Database: Ski Resort</h3>
+                            <p>
+                                A structured database project covering schema design, relational modeling, and query-driven
+                                analysis in a resort operations context.
+                            </p>
+                            <a class="project-card__link" href="project3.html">Open project</a>
+                        </article>
+
+                        <article class="project-card">
+                            <p class="project-card__tag">Product Build</p>
+                            <h3>Candidate Information Kiosk</h3>
+                            <p>
+                                An application-oriented project designed to organize information clearly and improve how
+                                users access candidate details.
+                            </p>
+                            <a class="project-card__link" href="project2.html">Open project</a>
+                        </article>
+                    </div>
+                </section>
+            </main>
+        </header>
+
+        <footer class="footer__container">
+            <div class="footer__content">
+                <div>
+                    <p class="footer__eyebrow">Contact</p>
+                    <h2>Riley McNair</h2>
+                </div>
+                <a class="footer__email" href="mailto:rileymcnair3@gmail.com">rileymcnair3@gmail.com</a>
             </div>
-            <ul class="navbar__menu">
-                <li class="navbar__item">
-                    <a href="https://rpmcnair.github.io/Website/" class="navbar__links">Home</a>
-                </li>
-                <li class="navbar__item">
-                    <a href="https://rpmcnair.github.io/Website/aboutme.html" class="navbar__links">About Me</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    
-   <!-- Main Content Area -->
-   <main class="main">
-    <!-- Title Section -->
-    <h1 class="main__title">Technical Projects</h1>
-
-    <!-- Grid of Project Buttons -->
-    <div class="button-container">
-        <!-- Project 1 -->
-        <button class="main__btn">
-            <a href="project1.html">Prediction Modeling: Voter Turnout</a>
-        </button>
-
-        <!-- Project 2 -->
-        <button class="main__btn">
-            <a href="project3.html">Relational Database: Ski Resort</a>
-        </button>
-
-        <!-- Project 3 -->
-        <button class="main__btn">
-            <a href="project2.html">Candidate Information Kiosk</a>
-        </button>
+        </footer>
     </div>
-</main>
 
-
-    <!-- Footer -->
-    <footer class="footer__container">
-        <div class="footer__links">
-          <div class="footer__link--wrapper">
-            <div class="footer__link--items">
-              <h2>Contact:</h2>
-              <a href="mailto:rileymcnair3@gmail.com">Email: rileymcnair3@gmail.com</a>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </div>
-    
-     
     <script src="app.js"></script>
 </body>
-</html> 
+</html>

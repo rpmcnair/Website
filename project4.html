@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 4</title>
+    <link rel="stylesheet" href="style_p.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="https://rpmcnair.github.io/Website/" id="navbar__logo">
+                <i class="fas fa-cubes fa-lg"></i>
+                Riley McNair
+            </a>
+            <div class="navbar__toggle" id="mobile-menu" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="https://rpmcnair.github.io/Website/" class="navbar__links">Home</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="https://rpmcnair.github.io/Website/aboutme.html" class="navbar__links">About Me</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="project-title">
+        <h1>Texas Procurement Watch (AWS Data Pipeline)</h1>
+    </div>
+
+    <div class="project-content">
+        <h3>Project Overview</h3>
+        <p>
+            This project is an end-to-end serverless data pipeline built on AWS that ingests public procurement data from the Texas Open Data portal, stores versioned raw data in S3, and transforms it into an analytics-ready format using Athena and Parquet.
+            </p>
+
+            <p>
+            The pipeline runs automatically on a schedule, processes new data incrementally, and is fully managed using Terraform. It demonstrates how to design and deploy a modern cloud-based data engineering workflow from ingestion to transformation.
+        </p>
+
+        <img src="images/project4_pipeline.svg" alt="AWS data pipeline from EventBridge to curated S3 data">
+
+        <h3>Problem</h3>
+        <p>
+        Public procurement data is available through open data portals, but it is not structured for easy analysis or monitoring over time. Raw data is often updated frequently, lacks versioning, and requires manual effort to track changes or analyze trends.
+        </p>
+
+        <p>
+        The goal of this project was to build a scalable system that automatically collects, stores, and organizes this data in a way that supports querying, validation, and future analytics.
+        </p>
+
+        <h3>Approach</h3>
+        <p>
+        I built a serverless data pipeline using AWS services and Python to automate the full data flow:
+        </p>
+
+        <ul>
+            <li>Fetched data from the Texas Open Data (Socrata) API using a Python ingestion service</li>
+            <li>Stored timestamped raw data in Amazon S3 using a partitioned "data lake" structure</li>
+            <li>Exposed raw data through AWS Athena and the Glue Data Catalog for SQL querying</li>
+            <li>Transformed raw JSON data into a curated Parquet dataset for efficient analysis</li>
+            <li>Automated incremental processing using a second Lambda function with duplicate-safe logic</li>
+            <li>Scheduled daily runs using EventBridge and added monitoring with CloudWatch and SNS alerts</li>
+        </ul>
+
+        <div class="project-showcase__grid">
+            <figure class="project-showcase__card">
+                <img src="images/project4_snsingest.png" alt="SNS alert notification for the ingest pipeline">
+                <figcaption>SNS alerting for the ingest stage to surface pipeline health and failures quickly.</figcaption>
+            </figure>
+
+            <figure class="project-showcase__card">
+                <img src="images/project4_snscurate.png" alt="SNS alert notification for the curate pipeline">
+                <figcaption>SNS alerting for the curate stage to track transformation runs and downstream issues.</figcaption>
+            </figure>
+        </div>
+
+        <div class="project-showcase">
+            <figure class="project-showcase__feature">
+                <img src="images/project4_bucketstructure.png" alt="S3 bucket structure showing raw, curated, and Athena results folders">
+                <figcaption>S3 bucket structure used to separate raw, curated, and query output layers.</figcaption>
+            </figure>
+
+            <div class="project-showcase__grid">
+                <figure class="project-showcase__card">
+                    <img src="images/project4_lambdafnc_ingest.png" alt="AWS Lambda dashboard for the ingest function">
+                    <figcaption>Ingest Lambda for scheduled collection and raw data writes.</figcaption>
+                </figure>
+
+                <figure class="project-showcase__card">
+                    <img src="images/project4_lambdafnc_curate.png" alt="AWS Lambda dashboard for the curate function">
+                    <figcaption>Curate Lambda for transformation and Parquet dataset generation.</figcaption>
+                </figure>
+            </div>
+        </div>
+
+        <p>
+        All infrastructure was defined and deployed using Terraform, making the system reproducible and scalable.
+        </p>
+
+        <h3>Results</h3>
+        <p>
+        The final system runs automatically each day and produces a fully queryable dataset with both raw and curated layers. Each run generates a new snapshot of procurement data, which can be inspected or analyzed using SQL.
+        </p>
+
+        <div class="project-showcase__grid">
+            <figure class="project-showcase__card">
+                <img src="images/project4_rawcurated_query.png" alt="Athena query results comparing raw and curated procurement data">
+                <figcaption>Query results showing the raw and curated layers exposed for inspection and validation.</figcaption>
+            </figure>
+
+            <figure class="project-showcase__card">
+                <img src="images/project4_ag_query.png" alt="Aggregated query results from the curated procurement dataset">
+                <figcaption>Aggregate query output highlighting the analytics-ready dataset produced by the pipeline.</figcaption>
+            </figure>
+        </div>
+
+        <p>
+        This project demonstrates key data engineering concepts including data lake design, partitioned storage, schema-on-read querying, serverless orchestration, and infrastructure as code.
+        </p>
+
+        <p>
+        Through this project, I gained hands-on experience with AWS services such as Lambda, S3, Athena, Glue, EventBridge, and CloudWatch, as well as real-world challenges like API pagination, data type inconsistencies, and incremental pipeline design.
+        </p>
+
+        <h3>Links</h3>
+        <p>
+        <a href="https://github.com/rpmcnair/tx_bid_watch" target="_blank">
+            View Project on GitHub
+        </a>
+        </p>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
